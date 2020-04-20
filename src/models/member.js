@@ -35,9 +35,7 @@ const memberScheme = new mongoose.Schema({
         type: String, 
 
     }, 
-    badges: [{
-       type: Badge 
-    }],
+    badges: [],
     coins: {
         type: Number,
         validate(value){
@@ -51,4 +49,9 @@ const memberScheme = new mongoose.Schema({
         default: false
     }
     
-})
+}, {timestamps: true})
+
+
+const Member = mongoose.model('Member', memberScheme)
+
+module.exports = Member

@@ -16,3 +16,5 @@ const badgeSchema = new mongoose.Schema({
 }, {timestamps: true})
 
 const Badge = mongoose.model("Badges", badgeSchema)
+
+module.exports = Badge

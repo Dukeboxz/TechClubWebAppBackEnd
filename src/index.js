@@ -1,14 +1,18 @@
 const express = require('express')
 require('./db/mongoose')
+const bodyParser = require('body-parser')
+const memberRouter = require('./routers/member')
+const badgeRouter = require('./routers/badge')
 
 const app = express()
+app.use(bodyParser.json())
 
-//app.use(express.json)
+app.use(memberRouter);
+app.use(badgeRouter);
 
-app.get('', (req, res) =>{
 
-    res.send("Express seems to be working with double quotes")
-})
+
+
 
 app.listen(3000, () => {
 
